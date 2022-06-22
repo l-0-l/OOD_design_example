@@ -52,14 +52,13 @@ class Movable:
         return x, y
 
     def move(self, *args):
-        """ This actually makes one step of the movable subject, it uses the set_location() and
-        next_location() methods for that. There's one thing interesting about this method here, it is the
-        *args parameter. Why do we need it? Well, further on a child class will have a move method as well,
-        and will want to call this class's move method in turn. But the child's move has an additional
-        parameter, one that this move method doesn't have. According to the LSP (Liskov Substitution Principle,
-        look it up) the signatures of both methods with the same name in father and child class must be the
-        same. The trick here is, therefore, to add the *args parameter, that accepts any number of parameters
-        provided to the method. """
+        """ This makes one step of the movable subject, it uses the set_location() and next_location() methods
+        for that. There's one thing interesting about this method here, it is the *args parameter. Why do we
+        need it? Well, further on a child class will have a move method as well, and will want to call this
+        class's move method in turn. But the child's move has an additional parameter, one that this move
+        method doesn't have. According to the LSP (Liskov Substitution Principle, look it up) the signatures
+        of both methods with the same name in father and child class must be the same. The trick here is,
+        therefore, to add the *args parameter, that accepts any number of parameters provided to the method. """
         self.set_location(self.next_location())
 
 
@@ -70,7 +69,7 @@ class Thing:
         """ One private attribute is defined, the default shape is the letter "O". We didn't discuss this
         till this point, but the __init__ method is important for all non-static classes, and usually we define
         attributes and defaults in it. We don't have to do it, but it is quite useful. The method is then being
-        automatically called upon object instantiation, i.e. when we create an object of a specific class."""
+        automatically called upon object instantiation, i.e. when we create an object of a specific class. """
         self._shape = shape
 
     def get_shape(self):
@@ -108,7 +107,7 @@ class Place:
     def get_value(self, location):
         """ Here we return a value of what exists in a specific location of the place. For a game it can be
         grass or stone or a wall, and for that the place must hold a 2D map with different values for each.
-        In the scope of this example, we just return a dot for any location. This actually makes this method
+        In the scope of this example, we just return a dot for any location. This practically makes this method
         static, i.e. one that does not access internal class resources. Still, we don't mark it as such,
         because the idea behind it is that it COULD return other values as well. """
         return "·"
@@ -196,7 +195,7 @@ class Game:
             self.creature.move(self.place)
 
 
-""" This actually starts our software by instantiating the Game class to an object and calling its play() method.
+""" This starts our software by instantiating the Game class to an object and calling its play() method.
 Press Ctrl+C to stop. """
 game = Game()
 game.play()
