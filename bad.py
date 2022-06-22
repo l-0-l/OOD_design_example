@@ -7,8 +7,8 @@ is just a simple example of Object Oriented Design - take a simple program, conv
 and show the important issues. But in addition, it is obvious that this small piece of software
 is extremely dedicated to its operation. It does exactly what it was designed for, and any
 change to the original design will be painful. On the other hand, the OOD example of course
-took more time to construct, but it offers great flexibility and offers one of the most important
-aspects in software programming, which is code reuse. This means you can take classes written
+took more time to construct, but it offers both great flexibility and one of the most important
+aspects in software engineering, which is code reuse. This means you can take classes written
 for that project and combine them in other programs that may need similar operation with minimal
 changes. Hurray!"""
 
